@@ -8,4 +8,8 @@ describe ('Thermostat', function() {
   it('starts with a temperature = 20 degree', function() {
     expect(thermostat.getCurrentTemperature()).toEqual(20);
   })
+
+  it('increases temperature', function() {
+    expect(thermostat.up(1)).toEqual(21)
+  })
 })
