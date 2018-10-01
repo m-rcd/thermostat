@@ -10,6 +10,12 @@ describe ('Thermostat', function() {
   })
 
   it('increases temperature', function() {
-    expect(thermostat.up(1)).toEqual(21)
+    thermostat.up(1)
+    expect(thermostat.getCurrentTemperature()).toEqual(21)
+  })
+
+  it('decreases temperature', function() {
+    thermostat.down(1)
+    expect(thermostat.getCurrentTemperature()).toEqual(19)
   })
 })
