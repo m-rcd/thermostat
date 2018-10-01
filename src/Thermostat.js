@@ -1,6 +1,7 @@
 'use strict';
 
 function Thermostat() {
+  this.MIN_TEMP = 10;
   this.temperature = 20;
 }
 
@@ -13,5 +14,13 @@ Thermostat.prototype.up = function(degrees) {
 }
 
 Thermostat.prototype.down = function(degrees) {
-   this.temperature -= degrees;
+
+   // if (this.temperature - degrees < this.MINIMUM_TEMPERATURE) {
+   //   return this.temperature = this.MINIMUM_TEMPERATURE;
+   // } else {
+   //   return this.temperature -= degrees;
+   // }
+   var result = this.temperature - degrees
+   return this.temperature = (result < this.MIN_TEMP) ? this.MIN_TEMP : result;
+
 }
