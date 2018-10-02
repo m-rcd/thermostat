@@ -20,7 +20,7 @@ describe ('Thermostat', function() {
     it('decreases temperature', function() {
       thermostat.down(1)
       expect(thermostat.getCurrentTemperature()).toEqual(19)
-    })
+    });
 
     it('minimum temperature 10 degrees', function() {
       thermostat.down(11)
@@ -36,21 +36,21 @@ describe ('Thermostat', function() {
     it('switches saving mode off', function() {
       thermostat.switchPowerSavingOff();
       expect(thermostat.isPowerSavingOn()).toBe (false);
-    })
+    });
 
     it('switches saving mode on', function() {
       thermostat.switchPowerSavingOn();
       expect(thermostat.isPowerSavingOn()).toBe (true);
-    })
-  })
+    });
+  });
 
   describe('#reset', function() {
     it('resets temperature to 20', function() {
       thermostat.up(3)
       thermostat.reset()
       expect(thermostat.getCurrentTemperature()).toEqual(20)
-    })
-  })
+    });
+  });
 
   describe('maximum temperature', function() {
     it('maximum temperature is 25 when SPM on', function() {
@@ -62,6 +62,28 @@ describe ('Thermostat', function() {
       thermostat.switchPowerSavingOff();
       thermostat.up(14);
       expect(thermostat.getCurrentTemperature()).toEqual(32)
+    });
+  });
+
+  describe('energy usage', function() {
+    describe('when energy level < 18', function() {
+      it('returns low usage', function() {
+        thermostat.down(3);
+        expect(thermostat.usage()).toEqual('low-usage')
+      });
+    });
+
+    describe('when energy level < 25', function() {
+      it('returns medium usage', function() {
+        expect(thermostat.usage()).toEqual('medium-usage')
+      });
+    });
+
+    describe('when energy level anything else', function() {
+      it('returns high usage', function() {
+        thermostat.up(6)
+        expect(thermostat.usage()).toEqual('high-usage')
+      });
     });
   });
 });
