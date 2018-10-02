@@ -51,4 +51,17 @@ describe ('Thermostat', function() {
       expect(thermostat.getCurrentTemperature()).toEqual(20)
     })
   })
+
+  describe('maximum temperature', function() {
+    it('maximum temperature is 25 when SPM on', function() {
+      thermostat.up(6)
+      expect(thermostat.getCurrentTemperature()).toEqual(25)
+    });
+
+    it('maximum temperature is 32 when SPM off', function() {
+      thermostat.switchPowerSavingOff();
+      thermostat.up(14);
+      expect(thermostat.getCurrentTemperature()).toEqual(32)
+    });
+  });
 });
