@@ -13,7 +13,7 @@ Thermostat.prototype.getCurrentTemperature = function() {
   return this.temperature;
 };
 
-Thermostat.prototype.up = function(degrees) {
+Thermostat.prototype.up = function(degrees = 1) {
   if (this.isPowerSavingOn() === false) {
      this.MAX_TEMP = 32;
   };
@@ -23,7 +23,7 @@ Thermostat.prototype.up = function(degrees) {
  this.temperature += degrees;
 };
 
-Thermostat.prototype.down = function(degrees) {
+Thermostat.prototype.down = function(degrees = 1) {
    var result = this.temperature - degrees
    return this.temperature = (result < this.MIN_TEMP) ? this.MIN_TEMP : result;
 };
@@ -51,5 +51,5 @@ Thermostat.prototype.usage = function() {
     return 'medium-usage'
   };
     return 'high-usage'
-  
+
 };

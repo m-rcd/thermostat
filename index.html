@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>Thermostat</title>
   </head>
-  <script src="js/thermostat.js"></script>
-
   <body>
     <section>
       <h1 id="temperature"></h1>
       <p>
-        <input type='number' name='degrees' />
         <button id="temperature-up">+</button>
         <button id="temperature-down">-</button>
         <button id="temperature-reset">reset</button>
@@ -18,5 +16,8 @@
         <button id="powersaving-off">PSM off</button>
       </p>
     </section>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="src/Thermostat.js"></script>
+    <script src="interface.js"></script>
   </body>
 </html>
