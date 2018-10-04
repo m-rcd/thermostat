@@ -42,22 +42,9 @@ body {
   font-family: fantasy;
 }
 
-.submit {
+.city {
   size: 30px;
-  min-width: 150px;
-  font-size: 30px;
-  border: 2px solid blue;
-  font-family: fantasy;
-  text-align: center;
-
-}
-
-#current-city {
-  background-color: white;
-  size: 30px;
-  min-width: 150px;
-  font-size: 30px;
-  border: 2px solid blue;
-  font-family: fantasy;
- text-align: center;
+  width: 330px;
+   padding: 3px;
+   margin-top: 40px;
 }

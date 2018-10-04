@@ -28,7 +28,7 @@ $(document).ready(function() {
   });
 
   function updateTemperature() {
-    $('#temperature').text(thermostat.temperature + '\xB0' + 'C');
+    $('#temperature').text(thermostat.temperature);
     $('#temperature').attr('class', thermostat.usage());
   }
 
@@ -45,7 +45,7 @@ displayWeather('London');
    var token = '&appid=a3d9eb01d4de82b9b8d0849ef604dbed';
    var units = '&units=metric';
    $.get(url + token + units, function(data) {
-     $('#current-temperature').text(data.main.temp + '\xB0' + 'C');
+     $('#current-temperature').text(data.main.temp);
    })
 }
 })
